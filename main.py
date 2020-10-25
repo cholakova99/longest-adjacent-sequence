@@ -1,12 +1,12 @@
 import sys
-from logic import create_matrix_from_file, find_longest_seq
+from logic import create_matrix_from_file, get_longest_seq
 
 
 def start(args):
     for x in args:
         x = "tests/" + x
         matrix = create_matrix_from_file(x)
-        res = find_longest_seq(matrix)
+        res = get_longest_seq(matrix)
         print(res)
 
 
