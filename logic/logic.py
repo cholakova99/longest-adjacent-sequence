@@ -2,13 +2,13 @@ from .create_matrix import create_matrix_from_file
 
 def get_possible_moves(matrix, row, col):
     moves = []
-    if row > 0:
+    if row > 0 and matrix[row - 1][col] != -1:
         moves.append((row - 1, col))
-    if col > 0:
+    if col > 0 and matrix[row][col - 1] != -1:
         moves.append((row, col - 1))
-    if row < len(matrix) - 1:
+    if row < len(matrix) - 1 and matrix[row + 1][col] != -1:
         moves.append((row + 1, col))
-    if col < len(matrix[0]) - 1:
+    if col < len(matrix[0]) - 1 and matrix[row][col + 1] != -1:
         moves.append((row, col + 1))
     return moves
 
