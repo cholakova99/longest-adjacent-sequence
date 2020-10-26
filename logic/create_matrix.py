@@ -10,6 +10,8 @@ def create_matrix_from_file(file_name):
     helper = []
     for i in range(rows+1):
         helper = list_with_info[i].split()
+        if i != 0 and len(helper)  != cols:
+            raise ValueError('Wrong input!')
         created_matrix.append(helper)
         helper = []
     created_matrix = created_matrix[1:]

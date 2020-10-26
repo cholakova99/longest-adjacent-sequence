@@ -6,8 +6,9 @@ def start(args):
     for x in args:
         x = "tests/" + x
         matrix = create_matrix_from_file(x)
-        res = get_longest_seq(matrix)
-        print(res)
+        if matrix is not None:
+            res = get_longest_seq(matrix)
+            print(res)
 
 
 def main():
